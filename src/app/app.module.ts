@@ -7,7 +7,7 @@ import { TitleComponent } from './components/title.component';
 import { SearchModule } from './pages/search/search.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule,SearchModule],
+  imports: [BrowserModule, FormsModule, SearchModule],
   declarations: [AppComponent, TitleComponent],
   bootstrap: [AppComponent],
 })
