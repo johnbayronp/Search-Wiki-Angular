@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Article, wikiResponse } from '../model/wikiResponse.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class WikiAPiService {
   api: string;
   constructor(private _http: HttpClient) {
