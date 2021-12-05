@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TitleComponent } from './components/title.component';
 import { SearchModule } from './pages/search/search.module';
-import { WikiAPiService } from './pages/search/services/wikiApi.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, SearchModule],
+  imports: [BrowserModule, FormsModule, SearchModule, HttpClientModule],
   declarations: [AppComponent, TitleComponent],
   bootstrap: [AppComponent],
 })
