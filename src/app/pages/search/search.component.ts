@@ -8,7 +8,7 @@ import { tap } from 'rxjs';
   styleUrls: ['./search.component.css'],
 })
 export class SearchComponent implements OnInit {
-  inputSearch: FormControl;
+  inputSearch = new FormControl('');
 
   constructor() {}
 
