@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, pluck } from 'rxjs';
 import { Article, wikiResponse } from '../model/wikiResponse.model';
 
 @Injectable({ providedIn: 'root' })
@@ -16,12 +16,13 @@ export class WikiAPiService {
       action: 'query',
       format: 'json',
       list: 'search',
-      utf8: '1',
       srsearch: find,
+      utf8: '1',
+      origin: '*',
     };
 
     return this._http
-      .get<any>(this.api, { params })
-      .pipe(map((e) => e.query.search));
+      .get<wikiResponse>(this.api, { params })
+      .pipe(pluck('query', 'search'));
   }
 }
