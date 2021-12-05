@@ -1,7 +1,9 @@
 <div class="item">
-  <a target="_blank" [href]="'https://es.wikipedia.org/?curid=' + article.pageid">{{
-    article.title
-  }}</a>
+  <a
+    target="_blank"
+    [href]="'https://es.wikipedia.org/?curid=' + article.pageid"
+    >{{ article.title }}</a
+  >
 
-  <p>{{ article.snippet }}</p>
+  <p [innerHtml]="article.snippet"></p>
 </div>
