@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { tap } from 'rxjs';
+import { WikiAPiService } from './services/wikiApi.service';
 
 @Component({
   selector: 'app-search',
@@ -10,9 +11,10 @@ import { tap } from 'rxjs';
 export class SearchComponent implements OnInit {
   inputSearch = new FormControl('');
 
-  constructor() {}
+  constructor(private wikiAPI: WikiAPiService) {}
 
   ngOnInit() {
-    this.inputSearch.valueChanges.pipe(tap((e) => console.log(e))).subscribe();
+    this.wikiAPI.search('angular').subscribe((e) => console.log(e));
+    //this.inputSearch.valueChanges.pipe(tap((e) => console.log(e))).subscribe();
   }
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { Article, wikiResponse } from '../model/wikiResponse.model';
 
 @Injectable()
 export class WikiAPiService {
@@ -10,7 +11,7 @@ export class WikiAPiService {
       'https://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=';
   }
 
-  search(find: string): Observable<any> {
+  search(find: string): Observable<Article[]> {
     const params = {
       action: 'query',
       format: 'json',
@@ -19,6 +20,8 @@ export class WikiAPiService {
       srsearch: find,
     };
 
-    return this._http.get<any>(this.api, { params });
+    return this._http
+      .get<any>(this.api, { params })
+      .pipe(map((e) => e.query.search));
   }
 }
