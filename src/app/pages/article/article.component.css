@@ -2,3 +2,12 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
+.muted {
+  font-size: 0.8em;
+  color: gray;
+  font-weight: 500;
+  font-family: 'poppins', sans-serif;
+  display: flex;
+  justify-content: end;
+  text-align: end;
+}

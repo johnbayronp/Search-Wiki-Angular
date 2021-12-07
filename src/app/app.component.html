@@ -1,4 +1,5 @@
 <title-header nombre="{{ title }}"></title-header>
+
 <div class="container">
   <app-search (submitted)="onSearch($event)"></app-search>
   <ng-container *ngFor="let article of articles$ | async">

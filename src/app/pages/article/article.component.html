@@ -4,6 +4,7 @@
     [href]="'https://es.wikipedia.org/?curid=' + article.pageid"
     >{{ article.title }}</a
   >
-
   <p [innerHtml]="article.snippet"></p>
+
+  <span class="muted">Fecha publicación: {{ article.timestamp | date }}</span>
 </div>
