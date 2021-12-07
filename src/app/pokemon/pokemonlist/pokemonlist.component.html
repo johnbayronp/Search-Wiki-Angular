@@ -3,16 +3,16 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Nombres</th>
-      <th>Apellidos</th>
-      <th>Celular</th>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Picture</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Jhon Bayron</td>
-      <td>Perez</td>
-      <td>301 482 6845</td>
+    <tr *ngFor="let pokemon of pokemons">
+      <td>{{ pokemon.id }}</td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.pic }}</td>
     </tr>
   </tbody>
 </table>

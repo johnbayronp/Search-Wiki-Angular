@@ -10,7 +10,7 @@ export interface smallPokemon {
   url: string;
 }
 
-export interface smallPokemon {
+export interface Pokemon {
   id: string;
   name: string;
   pic: string;
