@@ -1,6 +1,10 @@
 .item {
   margin-top: 20px;
   margin-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #f8f8f8f8;
 }
 .muted {
   font-size: 0.8em;
