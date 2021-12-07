@@ -8,9 +8,7 @@ export class PokemonAPIService {
   private urlAPI = 'https://pokeapi.co/api/v2';
   constructor(private _http: HttpClient) {}
 
-  getAllPokemon(): Observable<smallPokemon[]>{
-    return this._http
-      .get<pokemonAll>(`${this.urlAPI}` + '/pokemon?limit=100')
-      .pipe(pluck('count', 'previous', 'next'));
+  getAllPokemon(): Observable<smallPokemon[]> {
+    return this._http.get<pokemonAll>(`${this.urlAPI}` + '/pokemon?limit=100');
   }
 }
