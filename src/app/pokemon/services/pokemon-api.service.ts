@@ -36,12 +36,19 @@ export class PokemonAPIService {
       */
   }
 
+  getPokemon(id: string) {
+    return this._http.get(this.urlAPI + `/pokemon/${id}/`);
+  }
+
   private _transformPokemon(resp: pokemonAll): Pokemon[] {
     const pokemonList: Pokemon[] = resp.results.map((pokemon) => {
+      const _id = pokemon.url.split('/')[6];
+      const _pic = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${_id}.png`;
+
       return {
-        id: '1',
+        id: _id,
         name: pokemon.name,
-        pic: 'angie.url/photo.jpg',
+        pic: _pic,
       };
     });
 
