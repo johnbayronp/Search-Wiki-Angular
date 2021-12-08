@@ -36,10 +36,6 @@ export class PokemonAPIService {
       */
   }
 
-  getPokemon(id: string) {
-    return this._http.get(this.urlAPI + `/pokemon/${id}/`);
-  }
-
   private _transformPokemon(resp: pokemonAll): Pokemon[] {
     const pokemonList: Pokemon[] = resp.results.map((pokemon) => {
       const _id = pokemon.url.split('/')[6];
