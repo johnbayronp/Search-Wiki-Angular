@@ -10,9 +10,9 @@
   </thead>
   <tbody>
     <tr *ngFor="let pokemon of pokemons">
-      <td>{{ pokemon.id }}</td>
+      <th scope="row">{{ pokemon.id }}</th>
       <td>{{ pokemon.name }}</td>
-      <td><img src="{{ pokemon.pic }}" target="{{ pokemon.pic }}" /></td>
+      <td><img src="{{ pokemon.pic }}" alt="{{ pokemon.name }}" /></td>
     </tr>
   </tbody>
 </table>
