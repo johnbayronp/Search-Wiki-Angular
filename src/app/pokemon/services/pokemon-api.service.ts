@@ -14,7 +14,7 @@ export class PokemonAPIService {
 
   getAllPokemon() {
     return this._http
-      .get<pokemonAll>(`${this.urlAPI}` + '/pokemon?limit=100')
+      .get<pokemonAll>(`${this.urlAPI}` + '/pokemon?limit=500')
       .pipe(map(this._transformPokemon));
 
     // map me permite modificar lo que deseo enviar,
