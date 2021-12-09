@@ -9,8 +9,9 @@ import { PokemonAPIService } from '../services/pokemon-api.service';
 })
 export class PokemonlistComponent implements OnInit {
   constructor(private pokemonService: PokemonAPIService) {}
-  public page: Number = 0;
+  public page: number = 0;
   pokemons: Pokemon[];
+  search: string = '';
 
   ngOnInit() {
     this.pokemonService.getAllPokemon().subscribe((pokemons) => {
@@ -26,5 +27,8 @@ export class PokemonlistComponent implements OnInit {
     if (this.page > 0) {
       this.page = 5;
     }
+  }
+  onSearch(search: string) {
+    this.search = search;
   }
 }
