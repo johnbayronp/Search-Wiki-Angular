@@ -1,4 +1,9 @@
-<h1 class="ml-2 mt-5">Listado de pokemon</h1>
+<div class="btns-page mt-2">
+  <h1>Listado de pokemon</h1>
+
+  <button class="btn btn-danger mb-2 ms-1">Anterior</button>
+  <button class="btn btn-success mb-2 ms-2">Siguente</button>
+</div>
 
 <table class="table">
   <thead class="table-dark">
@@ -9,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pokemon of pokemons | filtro">
+    <tr *ngFor="let pokemon of pokemons | filtro: page">
       <th scope="row">{{ pokemon.id }}</th>
       <td>{{ pokemon.name }}</td>
       <td><img src="{{ pokemon.pic }}" alt="{{ pokemon.name }}" /></td>
