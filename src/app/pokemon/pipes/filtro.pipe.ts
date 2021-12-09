@@ -6,7 +6,7 @@ import { Pokemon } from '../interfaces/pokemon.interface';
 })
 export class FiltroPipe implements PipeTransform {
 
-  transform(pokemons: Pokemon[], args?: any): Pokemon[] {
+  transform(pokemons: Pokemon[]): Pokemon[] {
     
     
     
