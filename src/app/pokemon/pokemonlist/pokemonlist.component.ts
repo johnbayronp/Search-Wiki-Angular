@@ -20,12 +20,12 @@ export class PokemonlistComponent implements OnInit {
   }
 
   nextPage() {
-    this.page = +5;
+    this.page == this.pokemons.length - 5 ? this.page : (this.page += 5);
   }
 
   prevPage() {
     if (this.page > 0) {
-      this.page = 5;
+      this.page -= 5;
     }
   }
   onSearch(search: string) {
