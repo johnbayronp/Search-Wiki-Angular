@@ -3,7 +3,17 @@ img {
   width: 100px;
 }
 
-.btns-page{
+.btns-page {
   display: flex;
   justify-content: end;
+}
+
+.search {
+  padding: 10px;
+}
+
+.alert {
+  display: flex;
+  justify-content: center;
+  color: red;
 }

@@ -1,8 +1,26 @@
 <div class="btns-page mt-2">
   <h1>Listado de pokemon</h1>
 
-  <button class="btn btn-danger mb-2 ms-1">Anterior</button>
-  <button class="btn btn-success mb-2 ms-2">Siguente</button>
+  <button (click)="prevPage()" class="btn btn-danger mb-2 ms-1">
+    Anterior
+  </button>
+  <button
+    (click)="nextPage()"
+    class="btn btn-success mb-2 ms-2"
+    [disabled]="(pokemons | filtro: page:search).length === 0"
+  >
+    Siguente
+  </button>
+</div>
+
+<div class="search">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Buscar Pokemon"
+    #txtSearch
+    (keyup)="onSearch(txtSearch.value)"
+  />
 </div>
 
 <table class="table">
@@ -14,10 +32,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let pokemon of pokemons | filtro: page">
+    <tr *ngFor="let pokemon of pokemons | filtro: page:search">
       <th scope="row">{{ pokemon.id }}</th>
       <td>{{ pokemon.name }}</td>
       <td><img src="{{ pokemon.pic }}" alt="{{ pokemon.name }}" /></td>
     </tr>
+    <h5 class="alert" *ngIf="(pokemons | filtro: page:search).length === 0">
+      No hay mas pokemons en la lista
+    </h5>
   </tbody>
 </table>
